@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Погреб</string>
+    <string name="tagline">Пусть желания выдержатся.</string>
+    <string name="share_label">Заложить в погреб</string>
+    <string name="back">Назад</string>
+    <string name="cancel">Отмена</string>
+    <string name="delete">Удалить</string>
+    <string name="save">Сохранить</string>
+    <string name="remove">Убрать</string>
+    <string name="ok">ОК</string>
+    <string name="close">Закрыть</string>
+    <string name="next">Дальше</string>
+    <string name="skip">Пропустить</string>
+    <string name="got_it">Понятно</string>
+    <string name="today">сегодня</string>
+    <string name="yesterday">вчера</string>
+    <string name="quote">«%1$s»</string>
+    <string name="early">раньше срока</string>
+
+    <!-- Welcome and the guide -->
+    <string name="welcome_text">Любое желание купить кладётся в бутылку и выдерживается. Те, что созрели и всё ещё живы, ты открываешь без чувства вины: они прошли проверку временем. Те, что выдохлись, выливаешь в бочку своей настоящей мечты. Без банков, чеков и интернета: только то, что ты сам принёс в погреб.</string>
+    <string name="how_it_works">Как это работает</string>
+    <string name="go_down">Спуститься в погреб</string>
+    <string name="setup_title">Перед спуском</string>
+    <string name="setup_currency">Цены пишутся в:</string>
+    <string name="setup_dream">Для чего бочка? В неё перетекают деньги каждого вылитого желания. Можно не заполнять.</string>
+    <string name="setup_dream_later">Мечту можно написать мелом на бочке и потом.</string>
+    <string name="sample_dream">Япония</string>
+    <string name="g1_title">Заложи бутылку</string>
+    <string name="g1_text">Хочется что-то купить? Не покупай сразу, заложи в погреб. Впиши сам или нажми «Поделиться» в любом магазине и выбери «Погреб». И честно скажи, почему хочется именно сейчас.</string>
+    <string name="g2_title">Пусть выдержится</string>
+    <string name="g2_text">Цена выбирает бутылку: флакон выдерживается три дня, бутылка две недели, магнум месяц, бочонок три месяца. Оседает пыль, растёт паутина, желтеет этикетка. Время делает свою работу.</string>
+    <string name="g3_title">Дегустация</string>
+    <string name="g3_text">Когда бутылка созрела, спустись и возьми её в руки. Всё ещё хочется? Открой, то есть купи, без капли вины. Выдохлось? Вылей. Не уверен? Ещё неделю на стеллаже.</string>
+    <string name="g4_title">Бочка мечты</string>
+    <string name="g4_text">Вылитое не пропадает: оно перетекает в бочку твоей настоящей мечты, будь то поездка, подушка безопасности или велосипед. Отказ от одного становится шагом к другому.</string>
+    <string name="g5_title">Журнал и опись</string>
+    <string name="g5_text">Через месяц после открытия сомелье спросит: радует, так себе или уксус? Опись покажет, какие причины дают уксус и какие желания выдыхаются. А на 11.11 и в «чёрную пятницу» наверху гроза: всё, что заложено в эти дни, выдерживается вдвое дольше.</string>
+
+    <!-- The cellar -->
+    <string name="journal">Журнал сомелье</string>
+    <string name="ledger">Опись</string>
+    <string name="settings">Настройки</string>
+    <string name="barrel_unnamed">Бочка</string>
+    <string name="rack_page">Стеллаж %1$d из %2$d</string>
+    <string name="storm_now">Наверху гроза: %1$s</string>
+    <string name="storm_now_sub">Всё, что заложено сегодня, выдерживается вдвое дольше.</string>
+    <string name="ripe_one_hint">«%1$s» созрела</string>
+    <plurals name="ripe_hint">
+        <item quantity="one">Созрела %d бутылка</item>
+        <item quantity="few">Созрели %d бутылки</item>
+        <item quantity="many">Созрело %d бутылок</item>
+        <item quantity="other">Созрело %d бутылки</item>
+    </plurals>
+    <string name="ripe_hint_sub">Спуститься на дегустацию</string>
+    <string name="barrel_full_hint">Бочка полна: пора запечатать</string>
+    <string name="due_hint">Как «%1$s»?</string>
+    <string name="due_hint_sub">Месяц как открыта</string>
+    <string name="gift_soon">День подарка %1$s: %2$s</string>
+    <string name="lay_bottle">Заложить бутылку</string>
+    <string name="lay_gift">Идея подарка</string>
+    <string name="on_the_rack">На стеллаже</string>
+    <string name="gift_shelf">Полка подарков</string>
+    <string name="ripe">созрела</string>
+    <string name="poured_all">Всего вылито в бочки: %1$s</string>
+    <string name="first_steps">Пустой погреб</string>
+    <string name="first_step_1">В следующий раз, когда захочется что-то купить, нажми «Заложить бутылку» или поделись товаром сюда прямо из магазина.</string>
+    <string name="first_step_2">Скажи, почему хочется именно сейчас, и дай выдержаться.</string>
+    <string name="first_step_3">Когда созреет, реши: открыть или вылить в бочку.</string>
+
+    <!-- Laying -->
+    <string name="lay_title">Новая бутылка</string>
+    <string name="lay_gift_title">Идея подарка</string>
+    <string name="edit_bottle">Изменить</string>
+    <string name="ages_for">Выдержка: %1$s</string>
+    <string name="laid_on">Заложена %1$s</string>
+    <string name="gift_waits">Ждёт своего дня на полке подарков.</string>
+    <string name="what_want">Что хочется?</string>
+    <string name="gift_what">Что подарить?</string>
+    <string name="price">Цена</string>
+    <string name="link">Ссылка (не обязательно)</string>
+    <string name="gift_for">Кому</string>
+    <string name="gift_date">Дата (не обязательно)</string>
+    <string name="why_now">Почему хочется сейчас?</string>
+    <string name="why_now_sub">Честно: никто, кроме тебя, этого не увидит.</string>
+    <string name="ageing">Выдержка</string>
+    <string name="storm_doubles">Наверху гроза: %1$s. Всё, что заложено сегодня, выдерживается вдвое дольше: %2$s.</string>
+    <string name="note_title">Заметки</string>
+    <string name="note_hint">Чем нравится, для чего</string>
+    <string name="gift_note">Почему подойдёт</string>
+    <string name="add_picture">Добавить картинку или скриншот</string>
+    <string name="share_tip">Совет: в приложении любого магазина нажми «Поделиться» и выбери «Погреб», название и ссылка подставятся сами.</string>
+    <string name="lay_down">Заложить</string>
+    <string name="put_on_shelf">Поставить на полку подарков</string>
+
+    <!-- Reasons -->
+    <string name="r_need">Правда нужно</string>
+    <string name="r_bored">Скука</string>
+    <string name="r_sad">Грусть</string>
+    <string name="r_ad">Реклама</string>
+    <string name="r_envy">«У всех есть»</string>
+    <string name="r_sale">Скидка</string>
+    <string name="b_need">по необходимости</string>
+    <string name="b_bored">от скуки</string>
+    <string name="b_sad">от грусти</string>
+    <string name="b_ad">после рекламы</string>
+    <string name="b_envy">потому что у всех есть</string>
+    <string name="b_sale">из-за скидки</string>
+
+    <!-- Sizes -->
+    <string name="sz_vial">Флакон</string>
+    <string name="sz_bottle">Бутылка</string>
+    <string name="sz_magnum">Магнум</string>
+    <string name="sz_cask">Бочонок</string>
+
+    <!-- A bottle -->
+    <string name="vintage">урожай %1$s</string>
+    <string name="for_whom">для: %1$s</string>
+    <string name="ripe_still_want">Созрела. Всё ещё хочется?</string>
+    <string name="ages_left">Осталось %1$s</string>
+    <string name="aged_of">%1$d из %2$s</string>
+    <string name="laid_in_storm">заложена в грозу</string>
+    <string name="laid_because">Заложена %1$s.</string>
+    <string name="opened_on">Открыта %1$s</string>
+    <string name="opened_early_on">Открыта раньше срока, %1$s</string>
+    <string name="poured_on">Вылита в бочку %1$s</string>
+    <string name="poured_into">Вылита в бочку «%1$s» %2$s</string>
+    <string name="given_on">Подарено %1$s</string>
+    <string name="gift_today">День подарка сегодня</string>
+    <string name="gift_in">День подарка %1$s</string>
+    <string name="gift_date_passed">День подарка был %1$s</string>
+    <string name="how_is_it">Как она?</string>
+    <string name="how_is_it_sub">Спустя время, всё ещё радует?</string>
+    <string name="how_is_it_early">Дай время: сомелье спросит через %1$s после открытия. Можно ответить и сейчас.</string>
+    <string name="to_tasting">На дегустацию</string>
+    <string name="pour_now">Вылить сейчас</string>
+    <string name="poured_toast">Вылито в бочку</string>
+    <string name="open_early">Открыть раньше срока</string>
+    <string name="open_early_title">Ещё не созрела</string>
+    <string name="open_early_text">Осталось %1$s. Открыть можно и сейчас, но опись запомнит, что раньше срока.</string>
+    <string name="open_anyway">Всё равно открыть</string>
+    <string name="let_it_age">Пусть зреет</string>
+    <string name="back_on_rack">Вернуть на стеллаж</string>
+    <string name="given">Подарено</string>
+    <string name="delete_title">Выбросить бутылку?</string>
+    <string name="delete_text">Как будто её и не закладывали: нигде не посчитается.</string>
+
+    <!-- Verdicts -->
+    <string name="v_vintage">Винтаж</string>
+    <string name="v_vintage_sub">радует</string>
+    <string name="v_soso">Так себе</string>
+    <string name="v_soso_sub">ни то ни сё</string>
+    <string name="v_vinegar">Уксус</string>
+    <string name="v_vinegar_sub">зря</string>
+
+    <!-- The tasting -->
+    <string name="tasting">Дегустация</string>
+    <string name="tasting_of">%1$d из %2$d</string>
+    <string name="laid_ago">заложена %1$s</string>
+    <string name="still_want">Всё ещё хочется?</string>
+    <string name="open_it">Открыть: купить</string>
+    <string name="pour_it">Вылить в бочку</string>
+    <string name="pour_into">Вылить в бочку «%1$s»</string>
+    <string name="another_week">Ещё неделю на стеллаже</string>
+    <string name="tasting_done">Дегустация окончена</string>
+    <string name="tasting_none">Пока ничего не созрело</string>
+    <string name="tasting_none_sub">Бутылки зреют в своём темпе. Спускайся, когда созреет.</string>
+    <string name="tasting_opened_sub">Открытые бутылки ждут в журнале сомелье: через месяц он спросит, как они.</string>
+    <string name="back_to_cellar">В погреб</string>
+    <plurals name="opened_n">
+        <item quantity="one">Открыто: %d</item>
+        <item quantity="few">Открыто: %d</item>
+        <item quantity="many">Открыто: %d</item>
+        <item quantity="other">Открыто: %d</item>
+    </plurals>
+    <plurals name="poured_n">
+        <item quantity="one">Вылито: %d</item>
+        <item quantity="few">Вылито: %d</item>
+        <item quantity="many">Вылито: %d</item>
+        <item quantity="other">Вылито: %d</item>
+    </plurals>
+    <plurals name="waited_n">
+        <item quantity="one">Ещё неделю зреет: %d</item>
+        <item quantity="few">Ещё неделю зреют: %d</item>
+        <item quantity="many">Ещё неделю зреют: %d</item>
+        <item quantity="other">Ещё неделю зреют: %d</item>
+    </plurals>
+
+    <!-- The barrel -->
+    <string name="barrel">Бочка мечты</string>
+    <string name="barrel_no_target">В бочке %1$s</string>
+    <string name="barrel_left">В бочке %1$s, до цели %2$s</string>
+    <string name="barrel_full">%1$s: бочка полна!</string>
+    <string name="barrel_about">Сюда перетекает цена каждой вылитой бутылки. Деньги никуда не переводятся, но видно, куда ушёл порыв.</string>
+    <string name="dream_edit">Мечта</string>
+    <string name="dream_sub">Для чего бочка и сколько нужно.</string>
+    <string name="dream_name">Мечта</string>
+    <string name="dream_target">Сколько нужно</string>
+    <string name="dream_chalk">Написать мечту мелом</string>
+    <string name="seal_barrel">Запечатать бочку</string>
+    <string name="seal_barrel_text">Бочка «%1$s» полна. Запечатать её и вкатить пустую бочку для следующей мечты?</string>
+    <string name="seal_it">Запечатать</string>
+    <string name="poured_in">Вылито в неё</string>
+    <string name="poured_line">%1$s · после %2$s</string>
+    <string name="sealed_barrels">Запечатанные бочки</string>
+    <string name="sealed_on">Запечатана %1$s</string>
+
+    <!-- The journal -->
+    <string name="journal_sub">Что ты открыл и как оно оказалось месяц спустя.</string>
+    <string name="waiting_verdict">Ждут оценки</string>
+    <string name="opened_bottles">Открытые</string>
+    <string name="given_gifts">Подаренное</string>
+    <string name="journal_empty">Пока ничего не открыто.</string>
+
+    <!-- The ledger -->
+    <string name="this_month">Месяц</string>
+    <string name="this_year">Год</string>
+    <string name="all_time">Всё время</string>
+    <string name="f_laid">заложено</string>
+    <string name="f_opened">открыто</string>
+    <string name="f_poured">вылито</string>
+    <string name="f_aging">зреет</string>
+    <string name="f_saved">Вылито в бочки</string>
+    <string name="f_spent">Потрачено на открытое</string>
+    <string name="notes">Записки погребщика</string>
+    <string name="notes_empty">Бутылок пока мало для выводов. Заложи несколько, реши несколько.</string>
+    <string name="by_reason">По причинам</string>
+    <string name="vinegar_n">уксус: %1$d</string>
+    <string name="seals">Печати</string>
+    <string name="next_storm">Следующая гроза: %1$s, %2$s</string>
+    <string name="i_faded">Из %2$d вылитых бутылок %1$d были заложены %3$s.</string>
+    <string name="i_sour">Больше всего уксуса даёт «%1$s»: %2$d из %3$d оценённых.</string>
+    <string name="i_needed">Всё, что заложено по необходимости, ты открыл: %1$d из %2$d. Погреб не мешает настоящим нуждам.</string>
+    <string name="i_joy">Из открытого радует %1$d из %2$d.</string>
+    <string name="i_early">Раньше срока открыто бутылок: %1$d.</string>
+    <string name="i_early_sour">Раньше срока открыто бутылок: %1$d, и %2$d из них стали уксусом.</string>
+
+    <!-- Seals -->
+    <string name="seal_first_laid">Первая бутылка</string>
+    <string name="seal_first_laid_sub">заложено первое желание</string>
+    <string name="seal_first_poured">Первая вылитая</string>
+    <string name="seal_first_poured_sub">отпущено желание</string>
+    <string name="seal_first_ripe">Терпение</string>
+    <string name="seal_first_ripe_sub">открыта бутылка, выдержанная до конца</string>
+    <string name="seal_ten">Десять вылитых</string>
+    <string name="seal_ten_sub">отпущено десять желаний</string>
+    <string name="seal_storm">Пережил бурю</string>
+    <string name="seal_storm_sub">вылита бутылка, заложенная в грозу</string>
+    <string name="seal_half_year">Старый запас</string>
+    <string name="seal_half_year_sub">полгода на стеллаже</string>
+    <string name="seal_full">Полная бочка</string>
+    <string name="seal_full_sub">запечатана бочка мечты</string>
+    <string name="seal_clean">Хороший вкус</string>
+    <string name="seal_clean_sub">пять оценок подряд без уксуса</string>
+    <string name="seal_hundred">Сотня бутылок</string>
+    <string name="seal_hundred_sub">вылито на сотню бутылок</string>
+
+    <!-- Storms -->
+    <string name="storm_singles">11.11</string>
+    <string name="storm_black_friday">«чёрная пятница»</string>
+    <string name="storm_twelve">12.12</string>
+    <string name="storm_midyear">6.18</string>
+
+    <!-- Settings -->
+    <string name="language">Язык</string>
+    <string name="lang_system">Системный</string>
+    <string name="lang_en">English</string>
+    <string name="lang_ru">Русский</string>
+    <string name="currency">Валюта</string>
+    <string name="currency_sub">Бутылка от %1$s, магнум от %2$s, бочонок от %3$s. Смена валюты не пересчитывает уже записанные цены.</string>
+    <string name="cellar_rules">Погреб</string>
+    <string name="notify">Сообщать, когда бутылка созрела</string>
+    <string name="notify_sub">Одно тихое уведомление, больше ничего.</string>
+    <string name="storms">Грозы в дни распродаж</string>
+    <string name="storms_sub">На 11.11, в «чёрную пятницу», 12.12 и 6.18 всё заложенное выдерживается вдвое дольше. Следующая: %1$s, %2$s.</string>
+    <string name="about">О приложении</string>
+    <string name="about_text">«Погреб» входит в Stillcraft: маленькие тихие приложения. Без аккаунта, рекламы, аналитики и интернета. Всё остаётся на телефоне.</string>
+    <string name="version">Погреб %1$s</string>
+
+    <!-- Notifications -->
+    <string name="channel_ripe">Созревшие бутылки</string>
+    <string name="ripe_one">«%1$s» созрела</string>
+    <plurals name="ripe_many">
+        <item quantity="one">Созрела %d бутылка</item>
+        <item quantity="few">Созрели %d бутылки</item>
+        <item quantity="many">Созрело %d бутылок</item>
+        <item quantity="other">Созрело %d бутылки</item>
+    </plurals>
+    <string name="ripe_text">Спустишься? Всё ещё хочется?</string>
+
+    <!-- Time -->
+    <plurals name="days">
+        <item quantity="one">%d день</item>
+        <item quantity="few">%d дня</item>
+        <item quantity="many">%d дней</item>
+        <item quantity="other">%d дня</item>
+    </plurals>
+    <plurals name="weeks">
+        <item quantity="one">%d неделя</item>
+        <item quantity="few">%d недели</item>
+        <item quantity="many">%d недель</item>
+        <item quantity="other">%d недели</item>
+    </plurals>
+    <plurals name="months">
+        <item quantity="one">%d месяц</item>
+        <item quantity="few">%d месяца</item>
+        <item quantity="many">%d месяцев</item>
+        <item quantity="other">%d месяца</item>
+    </plurals>
+    <plurals name="days_ago">
+        <item quantity="one">%d день назад</item>
+        <item quantity="few">%d дня назад</item>
+        <item quantity="many">%d дней назад</item>
+        <item quantity="other">%d дня назад</item>
+    </plurals>
+    <plurals name="in_days">
+        <item quantity="one">через %d день</item>
+        <item quantity="few">через %d дня</item>
+        <item quantity="many">через %d дней</item>
+        <item quantity="other">через %d дня</item>
+    </plurals>
+</resources>
