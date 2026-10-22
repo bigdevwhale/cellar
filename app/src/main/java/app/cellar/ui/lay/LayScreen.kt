@@ -115,8 +115,8 @@ fun LayScreen(id: Long, giftArg: Boolean, home: Home, go: Go) {
     }
 
     val amount = price.filter(Char::isDigit).take(12).toLongOrNull() ?: 0L
-    val size = Rules.size(amount, home.currency)
-    val chosen = if (days > 0) days else Rules.suggest(size)
+    val size = home.scale.size(amount)
+    val chosen = if (days > 0) days else home.scale.days(size)
     val stormy = home.storm != null && old == null
     val laidFor = Rules.layDays(chosen, stormy)
 
@@ -189,7 +189,7 @@ fun LayScreen(id: Long, giftArg: Boolean, home: Home, go: Go) {
                 if (old == null) {
                     SectionTitle(stringResource(R.string.ageing))
                     FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                        Rules.AGES.forEach { d -> Chip(T.age(c, d), chosen == d) { days = d } }
+                        (Rules.AGES + chosen).distinct().sorted().forEach { d -> Chip(T.age(c, d), chosen == d) { days = d } }
                     }
                     if (stormy) {
                         Row(Modifier.padding(top = 10.dp).fillMaxWidth().clip(S.RMd).background(S.c.pourSoft).padding(12.dp), verticalAlignment = Alignment.CenterVertically) {

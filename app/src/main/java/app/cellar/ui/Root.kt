@@ -60,6 +60,7 @@ class Home(
 ) {
     val today: LocalDate = Rules.date(now)
     val currency = settings.currency
+    val scale = settings.scale
     fun money(amount: Long) = currency.format(amount)
 
     fun bottle(id: Long) = bottles.firstOrNull { it.id == id }
@@ -88,7 +89,7 @@ class Home(
     val storm: Storm? = if (settings.storms) Rules.storm(today) else null
 
     fun look(b: Bottle) = BottleLook(
-        size = Rules.size(b.price, currency), shape = b.shape,
+        size = scale.size(b.price), shape = b.shape,
         dust = if (b.stateOf == State.AGING) Rules.dust(b, now) else 0f, cobweb = Rules.cobweb(b, now),
         ripe = Rules.ripe(b, now), gift = b.kindOf == Kind.GIFT, state = b.stateOf,
         level = if (b.stateOf == State.OPENED) 0.55f else 1f,

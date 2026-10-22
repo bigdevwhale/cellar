@@ -30,7 +30,7 @@
     <string name="g1_title">Lay it down</string>
     <string name="g1_text">Want to buy something? Don’t buy it yet: lay it in the cellar. Type it in, or press “Share” in any shop and pick Cellar. And say honestly why you want it right now.</string>
     <string name="g2_title">Let it age</string>
-    <string name="g2_text">The price picks the bottle: a vial ages three days, a bottle two weeks, a magnum a month, a cask three months. Dust settles, a cobweb grows, the label yellows. Time does its work.</string>
+    <string name="g2_text">The price picks the bottle: a vial ages three days, a bottle two weeks, a magnum a month, a cask three months; you can change the prices and the ageing in the settings. Dust settles, a cobweb grows, the label yellows. Time does its work.</string>
     <string name="g3_title">The tasting</string>
     <string name="g3_text">When a bottle is ripe, go down and take it in your hands. Still want it? Open it, that is, buy it, without a scrap of guilt. Faded? Pour it out. Not sure? Another week on the rack.</string>
     <string name="g4_title">The dream’s barrel</string>
@@ -260,7 +260,17 @@
     <string name="lang_en">English</string>
     <string name="lang_ru">Русский</string>
     <string name="currency">Currency</string>
-    <string name="currency_sub">A bottle from %1$s, a magnum from %2$s, a cask from %3$s. Changing the currency doesn’t convert prices already written.</string>
+    <string name="currency_sub">Changing the currency doesn’t convert prices already written, and bottle prices go back to that currency’s defaults.</string>
+    <string name="bottles">Bottles and ageing</string>
+    <string name="bottles_sub">The price picks the bottle, and the bottle how long it ages. Tap one to change it.</string>
+    <string name="bottles_reset">Back to the defaults</string>
+    <string name="price_under">under %1$s</string>
+    <string name="price_from">from %1$s</string>
+    <string name="vial_price">Anything under %1$s. To change that, change where a bottle starts.</string>
+    <string name="starts_from">Starts from</string>
+    <string name="must_be_between">Must be above %1$s and below %2$s</string>
+    <string name="must_be_above">Must be above %1$s</string>
+    <string name="ages_by_default">Ages by default</string>
     <string name="cellar_rules">The cellar</string>
     <string name="notify">Say when a bottle is ripe</string>
     <string name="notify_sub">One quiet notification, nothing else.</string>

@@ -39,20 +39,11 @@ object Rules {
     /** Days before a gift's date when the gift shelf says so. */
     const val GIFT_SOON = 14
 
-    fun size(price: Long, currency: Currency): Size = when {
-        price >= currency.cask -> Size.CASK
-        price >= currency.magnum -> Size.MAGNUM
-        price >= currency.bottle -> Size.BOTTLE
-        else -> Size.VIAL
-    }
+    /** The bottle by the currency's default prices; the cellar's own come from [Scale]. */
+    fun size(price: Long, currency: Currency): Size = Scale.of(currency).size(price)
 
-    /** The ageing a size suggests: three days for small things, three months for a cask. */
-    fun suggest(size: Size): Int = when (size) {
-        Size.VIAL -> 3
-        Size.BOTTLE -> 14
-        Size.MAGNUM -> 30
-        Size.CASK -> 90
-    }
+    /** The ageing a size suggests by default: three days for small things, three months for a cask. */
+    fun suggest(size: Size): Int = Scale.DEFAULT_DAYS.getValue(size)
 
     fun date(at: Long, zone: ZoneId = ZoneId.systemDefault()): LocalDate = Instant.ofEpochMilli(at).atZone(zone).toLocalDate()
 

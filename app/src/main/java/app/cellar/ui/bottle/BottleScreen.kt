@@ -185,7 +185,7 @@ private fun Label(b: Bottle, home: Home, modifier: Modifier) {
         Spacer(Modifier.height(6.dp))
         Text(stringResource(R.string.vintage, T.vintage(b.laidAt)), style = SType.Small.copy(color = S.c.labelInk.copy(alpha = 0.7f), fontFamily = Hand, fontSize = 18.sp))
         if (b.price > 0) Text(
-            "${home.money(b.price)} · ${T.size(c, Rules.size(b.price, home.currency)).lowercase()}",
+            "${home.money(b.price)} · ${T.size(c, home.scale.size(b.price)).lowercase()}",
             style = SType.Body.copy(color = S.c.labelInk, fontFamily = Hand, fontSize = 21.sp),
         )
         if (b.giftFor.isNotBlank()) Text(stringResource(R.string.for_whom, b.giftFor), style = SType.Body.copy(color = S.c.labelInk, fontFamily = Hand, fontSize = 21.sp))

@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.1.0] - 2026-10-22
+
+- Settings → Bottles and ageing: change the price each bottle starts at and how long each one ages by default, with a way back to the defaults. A new currency starts from its own default prices.
+- The ageing chips when laying a bottle include the bottle's own default when it's set to something else.
+
 ## [1.0.0] - 2026-10-22
 
 The first release.

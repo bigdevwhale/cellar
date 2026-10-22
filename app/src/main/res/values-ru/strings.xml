@@ -30,7 +30,7 @@
     <string name="g1_title">Заложи бутылку</string>
     <string name="g1_text">Хочется что-то купить? Не покупай сразу, заложи в погреб. Впиши сам или нажми «Поделиться» в любом магазине и выбери «Погреб». И честно скажи, почему хочется именно сейчас.</string>
     <string name="g2_title">Пусть выдержится</string>
-    <string name="g2_text">Цена выбирает бутылку: флакон выдерживается три дня, бутылка две недели, магнум месяц, бочонок три месяца. Оседает пыль, растёт паутина, желтеет этикетка. Время делает свою работу.</string>
+    <string name="g2_text">Цена выбирает бутылку: флакон выдерживается три дня, бутылка две недели, магнум месяц, бочонок три месяца; цены и сроки можно поменять в настройках. Оседает пыль, растёт паутина, желтеет этикетка. Время делает свою работу.</string>
     <string name="g3_title">Дегустация</string>
     <string name="g3_text">Когда бутылка созрела, спустись и возьми её в руки. Всё ещё хочется? Открой, то есть купи, без капли вины. Выдохлось? Вылей. Не уверен? Ещё неделю на стеллаже.</string>
     <string name="g4_title">Бочка мечты</string>
@@ -268,7 +268,17 @@
     <string name="lang_en">English</string>
     <string name="lang_ru">Русский</string>
     <string name="currency">Валюта</string>
-    <string name="currency_sub">Бутылка от %1$s, магнум от %2$s, бочонок от %3$s. Смена валюты не пересчитывает уже записанные цены.</string>
+    <string name="currency_sub">Смена валюты не пересчитывает уже записанные цены, а цены бутылок возвращаются к стандартным для этой валюты.</string>
+    <string name="bottles">Бутылки и выдержка</string>
+    <string name="bottles_sub">Цена выбирает бутылку, а бутылка — срок выдержки. Нажми, чтобы изменить.</string>
+    <string name="bottles_reset">Вернуть как было</string>
+    <string name="price_under">до %1$s</string>
+    <string name="price_from">от %1$s</string>
+    <string name="vial_price">Всё, что дешевле %1$s. Чтобы это изменить, поменяй, с какой цены начинается бутылка.</string>
+    <string name="starts_from">С какой цены</string>
+    <string name="must_be_between">Должно быть больше %1$s и меньше %2$s</string>
+    <string name="must_be_above">Должно быть больше %1$s</string>
+    <string name="ages_by_default">Выдержка по умолчанию</string>
     <string name="cellar_rules">Погреб</string>
     <string name="notify">Сообщать, когда бутылка созрела</string>
     <string name="notify_sub">Одно тихое уведомление, больше ничего.</string>

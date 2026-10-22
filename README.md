@@ -29,7 +29,7 @@ Budget apps count what's already spent. Cellar stands between "I want it" and "I
 ## How it works
 
 1. **Lay a bottle.** Type the wish in, or press "Share" in any shop's app and pick Cellar: the name, the link and sometimes the price come in by themselves. One honest question: why right now? Need, boredom, feeling low, an ad, "everyone has it", a sale.
-2. **The price picks the bottle.** A vial ages three days, a bottle two weeks, a magnum a month, a cask three months (or choose your own). On the rack, dust settles on the shoulders, a cobweb grows to the shelf above and the label yellows.
+2. **The price picks the bottle.** A vial ages three days, a bottle two weeks, a magnum a month, a cask three months (or choose your own). Both the prices and the ageing can be changed in the settings. On the rack, dust settles on the shoulders, a cobweb grows to the shelf above and the label yellows.
 3. **The tasting.** Ripe bottles glow by candlelight and send one quiet notification. Take one in your hands: **open it** (the cork pops: buy it, no guilt), **pour it** (the bottle tips into the barrel), or give it **another week**.
 4. **The dream's barrel.** Every poured bottle's price flows into the barrel with your real dream chalked on it: Japan, a safety cushion, a bicycle. A glass gauge shows the level; a full barrel is sealed with wax and an empty one rolled in.
 5. **The sommelier's journal.** A month after opening, it asks how the purchase turned out: a fine vintage, so-so, or vinegar.

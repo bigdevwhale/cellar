@@ -63,13 +63,16 @@ fun SettingsScreen(home: Home, go: Go) {
             SectionTitle(stringResource(R.string.currency))
             FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 Currency.entries.forEach { cur ->
-                    Chip("${cur.symbol} ${cur.name}", s.currency == cur) { container.write { settings.update { it.copy(currency = cur) } } }
+                    // Bottle prices belong to a currency: a new one starts from its own defaults.
+                    Chip("${cur.symbol} ${cur.name}", s.currency == cur) { if (cur != s.currency) container.write { settings.update { it.copy(currency = cur, prices = emptyMap()) } } }
                 }
             }
             Text(
-                stringResource(R.string.currency_sub, s.currency.format(s.currency.bottle), s.currency.format(s.currency.magnum), s.currency.format(s.currency.cask)),
-                style = SType.Muted, modifier = Modifier.padding(top = 8.dp, start = 4.dp),
+                stringResource(R.string.currency_sub), style = SType.Muted, modifier = Modifier.padding(top = 8.dp, start = 4.dp),
             )
+
+            SectionTitle(stringResource(R.string.bottles))
+            BottlesSection(home)
 
             SectionTitle(stringResource(R.string.cellar_rules))
             Toggle(stringResource(R.string.notify), stringResource(R.string.notify_sub), s.notify) { on ->

@@ -39,6 +39,19 @@ class RulesTest {
         assertEquals(90, Rules.suggest(Size.CASK))
     }
 
+    @Test fun customScale() {
+        val s = app.cellar.data.Settings(currency = Currency.RUB, prices = mapOf(Size.BOTTLE to 2_000L, Size.CASK to 100_000L), days = mapOf(Size.VIAL to 1))
+        val scale = s.scale
+        assertEquals(Size.VIAL, scale.size(1_999))
+        assertEquals(Size.BOTTLE, scale.size(2_000))
+        assertEquals(Size.MAGNUM, scale.size(99_999))
+        assertEquals(Size.CASK, scale.size(100_000))
+        assertEquals(1, scale.days(Size.VIAL))
+        assertEquals(14, scale.days(Size.BOTTLE))
+        assertEquals(2_001L..99_999L, app.cellar.domain.Scale.bounds(scale, Size.MAGNUM))
+        assertFalse(app.cellar.data.Settings().customScale)
+    }
+
     @Test fun ripensOnTimeAndExtends() {
         assertFalse(Rules.ripe(wish(13, 14), t0))
         assertTrue(Rules.ripe(wish(14, 14), t0))
