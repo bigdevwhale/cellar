@@ -64,6 +64,7 @@ object T {
             Reason.AD -> R.string.r_ad
             Reason.ENVY -> R.string.r_envy
             Reason.SALE -> R.string.r_sale
+            Reason.PRETTY -> R.string.r_pretty
         },
     )
 
@@ -76,6 +77,7 @@ object T {
             Reason.AD -> R.string.b_ad
             Reason.ENVY -> R.string.b_envy
             Reason.SALE -> R.string.b_sale
+            Reason.PRETTY -> R.string.b_pretty
         },
     )
 

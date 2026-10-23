@@ -101,12 +101,14 @@
     <string name="r_ad">Реклама</string>
     <string name="r_envy">«У всех есть»</string>
     <string name="r_sale">Скидка</string>
+    <string name="r_pretty">Красивое</string>
     <string name="b_need">по необходимости</string>
     <string name="b_bored">от скуки</string>
     <string name="b_sad">от грусти</string>
     <string name="b_ad">после рекламы</string>
     <string name="b_envy">потому что у всех есть</string>
     <string name="b_sale">из-за скидки</string>
+    <string name="b_pretty">потому что красивое</string>
 
     <!-- Sizes -->
     <string name="sz_vial">Флакон</string>

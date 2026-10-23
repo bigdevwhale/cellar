@@ -181,4 +181,13 @@ class RulesTest {
 
         assertNull(Share.parse("   "))
     }
+
+    @Test fun linkFieldTakesOnlyLinks() {
+        assertEquals("https://ozon.ru/t/AbC123", Share.link("Беспроводные наушники Sony https://ozon.ru/t/AbC123", ""))
+        assertEquals("https://ozon.ru/t/AbC123", Share.link("Наушники\nhttps://ozon.ru/t/AbC123", ""))
+        assertEquals("", Share.link("Беспроводные наушники Sony", ""))
+        assertEquals("ozon.ru/t", Share.link("ozon.ru/t", "ozon.ru/"))
+        // Pasted over an old link: the new one wins.
+        assertEquals("https://ozon.ru/t/New", Share.link("https://wb.ru/oldНаушники https://ozon.ru/t/New", "https://wb.ru/old"))
+    }
 }

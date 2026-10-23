@@ -62,6 +62,7 @@ import app.cellar.data.Bottle
 import app.cellar.data.Kind
 import app.cellar.data.Reason
 import app.cellar.domain.Rules
+import app.cellar.domain.Share
 import app.cellar.notify.Ripe
 import app.cellar.ui.Go
 import app.cellar.ui.Home
@@ -165,7 +166,7 @@ fun LayScreen(id: Long, giftArg: Boolean, home: Home, go: Go) {
                 keyboard = KeyboardOptions(keyboardType = KeyboardType.Number), suffix = home.currency.symbol,
             )
             Spacer(Modifier.height(10.dp))
-            Field(url, { url = it }, stringResource(R.string.link), keyboard = KeyboardOptions(keyboardType = KeyboardType.Uri, capitalization = KeyboardCapitalization.None))
+            Field(url, { url = Share.link(it, url) }, stringResource(R.string.link), keyboard = KeyboardOptions(keyboardType = KeyboardType.Uri, capitalization = KeyboardCapitalization.None))
 
             if (gift) {
                 Spacer(Modifier.height(10.dp))

@@ -99,12 +99,14 @@
     <string name="r_ad">An ad</string>
     <string name="r_envy">Everyone has it</string>
     <string name="r_sale">A sale</string>
+    <string name="r_pretty">It’s beautiful</string>
     <string name="b_need">out of need</string>
     <string name="b_bored">out of boredom</string>
     <string name="b_sad">when feeling low</string>
     <string name="b_ad">after an ad</string>
     <string name="b_envy">because everyone has it</string>
     <string name="b_sale">for the sale</string>
+    <string name="b_pretty">because it’s beautiful</string>
 
     <!-- Sizes -->
     <string name="sz_vial">Vial</string>

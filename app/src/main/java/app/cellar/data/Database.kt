@@ -47,7 +47,7 @@ enum class State {
 
 /** Why it was wanted right then: the one question asked when a bottle is laid. */
 enum class Reason {
-    NEED, BORED, SAD, AD, ENVY, SALE;
+    NEED, BORED, SAD, AD, ENVY, SALE, PRETTY;
 
     companion object {
         fun of(s: String?) = entries.firstOrNull { it.name == s } ?: NEED

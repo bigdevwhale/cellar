@@ -13,7 +13,7 @@ object Share {
     private val NOISE = Regex("""(?iu)(посмотрите|смотри|look at|check out|check this out|on ozon|на ozon|в приложении|в wildberries|on wildberries|on amazon|на маркете)[^\n]*?[:—–-]?\s*""")
 
     fun parse(text: String, subject: String = ""): Shared? {
-        val url = URL.find(text)?.value?.trimEnd('.', ',', ')', '»', '"') ?: ""
+        val url = URL.find(text)?.value?.let(::clean) ?: ""
         val price = PRICE.find(text)
         var name = text.replace(URL, " ")
         if (price != null) name = name.replace(price.value, " ")
@@ -26,6 +26,18 @@ object Share {
         val cur = price?.let { m -> currency(m.groupValues[1].ifEmpty { m.groupValues[4] }) }
         return Shared(name.take(80), url, amount, cur)
     }
+
+    /**
+     * What the link field keeps after an edit. A paste with a link in it ("Name https://…") leaves just the link;
+     * text with spaces and no link isn't a link at all, so the field stays as it was. Plain typing passes through.
+     */
+    fun link(input: String, old: String): String {
+        val fresh = if (old.isNotEmpty() && old in input) input.replaceFirst(old, " ") else input
+        URL.find(fresh)?.let { return clean(it.value) }
+        return if (input.any(Char::isWhitespace)) old else input
+    }
+
+    private fun clean(url: String) = url.trimEnd('.', ',', ')', '»', '"')
 
     /** "ozon.ru" from a link, without "www.". */
     fun host(url: String): String = Regex("""https?://(?:www\.)?([^/\s?#]+)""").find(url)?.groupValues?.get(1).orEmpty()
