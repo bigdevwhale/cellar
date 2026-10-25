@@ -34,6 +34,7 @@ import app.cellar.ui.Home
 import app.cellar.ui.Language
 import app.cellar.ui.T
 import app.cellar.ui.components.Chip
+import app.cellar.ui.components.CommunityLinks
 import app.cellar.ui.components.Segmented
 import app.cellar.ui.components.SectionTitle
 import app.cellar.ui.components.Toggle
@@ -86,6 +87,9 @@ fun SettingsScreen(home: Home, go: Go) {
                 stringResource(R.string.storms_sub, T.storm(c, storm), T.date(c, day.atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli(), home.today)),
                 s.storms,
             ) { on -> container.write { settings.update { it.copy(storms = on) } } }
+
+            SectionTitle(stringResource(R.string.community))
+            CommunityLinks()
 
             SectionTitle(stringResource(R.string.about))
             Text(stringResource(R.string.about_text), style = SType.Muted)
