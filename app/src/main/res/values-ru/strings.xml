@@ -109,6 +109,10 @@
     <string name="b_envy">потому что у всех есть</string>
     <string name="b_sale">из-за скидки</string>
     <string name="b_pretty">потому что красивое</string>
+    <string name="b_own">с пометкой «%1$s»</string>
+    <string name="r_own_add">+ Своя причина</string>
+    <string name="r_own_hint">Своими словами</string>
+    <string name="r_own_ok">Готово</string>
 
     <!-- Sizes -->
     <string name="sz_vial">Флакон</string>

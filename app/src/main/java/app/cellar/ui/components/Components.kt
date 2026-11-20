@@ -218,6 +218,7 @@ fun Field(
     minLines: Int = 1,
     keyboard: KeyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Sentences),
     suffix: String? = null,
+    onDone: (() -> Unit)? = null,
 ) {
     OutlinedTextField(
         value = value,
@@ -229,6 +230,7 @@ fun Field(
         modifier = modifier.fillMaxWidth(),
         shape = S.RMd,
         keyboardOptions = keyboard,
+        keyboardActions = androidx.compose.foundation.text.KeyboardActions(onDone = onDone?.let { f -> { f() } }),
         suffix = suffix?.let { { Text(it, style = SType.Body.copy(color = S.c.muted)) } },
         colors = OutlinedTextFieldDefaults.colors(
             focusedBorderColor = S.c.flame,

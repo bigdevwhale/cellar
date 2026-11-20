@@ -143,18 +143,18 @@ object Rules {
     }
 }
 
-/** One reason's line in the ledger. */
-data class ReasonRow(val reason: Reason, val laid: Int, val opened: Int, val poured: Int, val vintage: Int, val vinegar: Int) {
+/** One reason's line in the ledger: [reason] is a [Reason]'s name or the user's own words. */
+data class ReasonRow(val reason: String, val laid: Int, val opened: Int, val poured: Int, val vintage: Int, val vinegar: Int) {
     val decided get() = opened + poured
 }
 
 /** A line the cellarman writes in the ledger, from the numbers. */
 sealed interface Insight {
     /** Most of what was poured had been laid out of [reason]. */
-    data class Faded(val reason: Reason, val n: Int, val of: Int) : Insight
+    data class Faded(val reason: String, val n: Int, val of: Int) : Insight
 
     /** [reason] gives the most vinegar. */
-    data class Sour(val reason: Reason, val n: Int, val of: Int) : Insight
+    data class Sour(val reason: String, val n: Int, val of: Int) : Insight
 
     /** Everything (or almost) laid out of need was opened: the cellar doesn't stop real needs. */
     data class Needed(val n: Int, val of: Int) : Insight
@@ -176,8 +176,12 @@ class Ledger(all: List<Bottle>, from: Long = 0) {
     val pouredSum = poured.sumOf { it.price }
     val openedSum = opened.sumOf { it.price }
 
-    val rows: List<ReasonRow> = Reason.entries.map { r ->
-        val mine = wishes.filter { it.reasonOf == r }
+    // the given reasons in their order, then the user's own, most used first
+    private val keys = Reason.entries.map { it.name } +
+        wishes.map { it.reason }.filter { Reason.builtin(it) == null && it.isNotBlank() }.groupingBy { it }.eachCount().entries.sortedByDescending { it.value }.map { it.key }
+
+    val rows: List<ReasonRow> = keys.map { r ->
+        val mine = wishes.filter { it.reason == r }
         ReasonRow(
             r, mine.size, mine.count { it.stateOf == State.OPENED }, mine.count { it.stateOf == State.POURED },
             mine.count { it.verdictOf == Verdict.VINTAGE }, mine.count { it.verdictOf == Verdict.VINEGAR },
@@ -188,8 +192,8 @@ class Ledger(all: List<Bottle>, from: Long = 0) {
         val top = rows.maxByOrNull { it.poured }
         if (top != null && top.poured >= 2 && poured.size >= 3) add(Insight.Faded(top.reason, top.poured, poured.size))
         val sour = rows.filter { it.vinegar >= 2 }.maxByOrNull { it.vinegar.toFloat() / (it.vintage + it.vinegar + 0.5f) }
-        if (sour != null) add(Insight.Sour(sour.reason, sour.vinegar, opened.count { it.reasonOf == sour.reason && it.verdictOf != null }))
-        rows.firstOrNull { it.reason == Reason.NEED }?.let { need ->
+        if (sour != null) add(Insight.Sour(sour.reason, sour.vinegar, opened.count { it.reason == sour.reason && it.verdictOf != null }))
+        rows.firstOrNull { it.reason == Reason.NEED.name }?.let { need ->
             if (need.decided >= 2 && need.opened * 4 >= need.decided * 3) add(Insight.Needed(need.opened, need.decided))
         }
         val tasted = opened.filter { it.verdictOf != null }

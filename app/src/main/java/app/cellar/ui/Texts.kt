@@ -68,6 +68,12 @@ object T {
         },
     )
 
+    /** A reason by its key: a given one, or the user's own words as they are. */
+    fun reason(c: Context, key: String): String = Reason.builtin(key)?.let { reason(c, it) } ?: key
+
+    /** A reason by its key, to finish a sentence: «от скуки», or «с пометкой «…»» for one's own. */
+    fun because(c: Context, key: String): String = Reason.builtin(key)?.let { because(c, it) } ?: c.getString(R.string.b_own, key)
+
     /** "out of boredom", to finish a sentence. */
     fun because(c: Context, r: Reason): String = c.getString(
         when (r) {

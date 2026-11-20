@@ -127,7 +127,7 @@ fun TastingScreen(home: Home, go: Go) {
             val line = listOfNotNull(
                 current.price.takeIf { it > 0 }?.let(home::money),
                 stringResource(R.string.laid_ago, T.ago(c, current.laidAt, home.today)),
-                T.because(c, current.reasonOf),
+                T.because(c, current.reason),
             ).joinToString(" · ")
             Text(line, style = SType.Muted, textAlign = TextAlign.Center)
             if (current.note.isNotBlank()) {

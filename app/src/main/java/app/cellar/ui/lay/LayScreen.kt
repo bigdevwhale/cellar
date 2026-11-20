@@ -95,7 +95,13 @@ fun LayScreen(id: Long, giftArg: Boolean, home: Home, go: Go) {
     var price by rememberSaveable { mutableStateOf(old?.price?.takeIf { it > 0 }?.toString() ?: "") }
     var url by rememberSaveable { mutableStateOf(old?.url ?: "") }
     var note by rememberSaveable { mutableStateOf(old?.note ?: "") }
-    var reason by rememberSaveable { mutableStateOf(old?.reasonOf?.name) }
+    var reason by rememberSaveable { mutableStateOf(old?.reason) }
+    // one's own reasons, written once and offered again next time (#1)
+    val own = remember(home.bottles) {
+        home.bottles.sortedByDescending { it.laidAt }.map { it.reason.trim() }.filter { it.isNotEmpty() && Reason.builtin(it) == null }.distinct().take(12)
+    }
+    var writing by rememberSaveable { mutableStateOf(false) }
+    var ownText by rememberSaveable { mutableStateOf("") }
     var photo by rememberSaveable { mutableStateOf(old?.photo) }
     var giftFor by rememberSaveable { mutableStateOf(old?.giftFor ?: "") }
     var giftAt by rememberSaveable { mutableLongStateOf(old?.giftAt ?: 0L) }
@@ -185,7 +191,16 @@ fun LayScreen(id: Long, giftArg: Boolean, home: Home, go: Go) {
                 SectionTitle(stringResource(R.string.why_now))
                 Text(stringResource(R.string.why_now_sub), style = SType.Muted, modifier = Modifier.padding(start = 4.dp, bottom = 8.dp))
                 FlowRow(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    Reason.entries.forEach { r -> Chip(T.reason(c, r), reason == r.name) { reason = r.name } }
+                    Reason.entries.forEach { r -> Chip(T.reason(c, r), reason == r.name) { reason = r.name; writing = false } }
+                    (own + listOfNotNull(reason?.takeIf { Reason.builtin(it) == null && it !in own })).forEach { r -> Chip(r, reason == r) { reason = r; writing = false } }
+                    Chip(stringResource(R.string.r_own_add), writing) { writing = !writing }
+                }
+                if (writing) Row(Modifier.padding(top = 8.dp).fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+                    val ok = { ownText.trim().take(40).takeIf { it.isNotEmpty() }?.let { reason = it; ownText = ""; writing = false }; Unit }
+                    Field(ownText, { ownText = it.take(40) }, stringResource(R.string.r_own_hint), Modifier.weight(1f),
+                        keyboard = KeyboardOptions(capitalization = KeyboardCapitalization.Sentences, imeAction = androidx.compose.ui.text.input.ImeAction.Done), onDone = ok)
+                    Spacer(Modifier.width(8.dp))
+                    Chip(stringResource(R.string.r_own_ok), ownText.isNotBlank()) { ok() }
                 }
                 if (old == null) {
                     SectionTitle(stringResource(R.string.ageing))

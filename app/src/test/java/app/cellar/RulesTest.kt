@@ -143,12 +143,21 @@ class RulesTest {
         val l = Ledger(all)
         assertEquals(11, l.laid)
         assertEquals(4, l.poured.size)
-        assertTrue(Insight.Faded(Reason.BORED, 3, 4) in l.insights)
-        assertTrue(Insight.Sour(Reason.SALE, 2, 3) in l.insights)
+        assertTrue(Insight.Faded(Reason.BORED.name, 3, 4) in l.insights)
+        assertTrue(Insight.Sour(Reason.SALE.name, 2, 3) in l.insights)
         assertTrue(Insight.Needed(3, 3) in l.insights)
         assertTrue(Insight.Joy(2, 4) in l.insights)
         assertTrue(Insight.Early(2, 2) in l.insights)
         assertTrue(Ledger(all, from = t0).insights.isEmpty())
+    }
+
+    @Test fun ownReasonsHaveTheirOwnLines() {
+        val t0 = System.currentTimeMillis()
+        fun b(r: String, s: State) = wish(20, 3).copy(reason = r, state = s.name, endedAt = t0 - DAY)
+        val l = Ledger(listOf(b("Тяжёлый день", State.POURED), b("Тяжёлый день", State.POURED), b("Тяжёлый день", State.POURED), b(Reason.AD.name, State.POURED), b("Подарок себе", State.OPENED)))
+        assertEquals(listOf(Reason.AD.name, "Тяжёлый день", "Подарок себе"), l.rows.map { it.reason })
+        assertTrue(Insight.Faded("Тяжёлый день", 3, 4) in l.insights)
+        assertEquals(null, Reason.builtin("Тяжёлый день"))
     }
 
     @Test fun money() {

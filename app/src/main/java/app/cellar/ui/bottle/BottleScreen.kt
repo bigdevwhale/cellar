@@ -109,7 +109,7 @@ fun BottleScreen(id: Long, home: Home, go: Go) {
                 }
                 State.GIVEN -> Line(Icons.Rounded.CardGiftcard, stringResource(R.string.given_on, T.date(c, b.endedAt, home.today)), S.c.wine)
             }
-            if (!gift) Text(stringResource(R.string.laid_because, T.because(c, b.reasonOf)), style = SType.Muted, modifier = Modifier.padding(top = 10.dp))
+            if (!gift) Text(stringResource(R.string.laid_because, T.because(c, b.reason)), style = SType.Muted, modifier = Modifier.padding(top = 10.dp))
 
             if (state == State.OPENED) {
                 SectionTitle(stringResource(R.string.how_is_it))

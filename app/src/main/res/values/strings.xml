@@ -107,6 +107,10 @@
     <string name="b_envy">because everyone has it</string>
     <string name="b_sale">for the sale</string>
     <string name="b_pretty">because it’s beautiful</string>
+    <string name="b_own">tagged “%1$s”</string>
+    <string name="r_own_add">+ My own reason</string>
+    <string name="r_own_hint">In your own words</string>
+    <string name="r_own_ok">Done</string>
 
     <!-- Sizes -->
     <string name="sz_vial">Vial</string>

@@ -51,6 +51,9 @@ enum class Reason {
 
     companion object {
         fun of(s: String?) = entries.firstOrNull { it.name == s } ?: NEED
+
+        /** One of the given reasons, or null for the user's own words (#1). */
+        fun builtin(s: String?) = entries.firstOrNull { it.name == s }
     }
 }
 
