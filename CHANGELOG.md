@@ -6,6 +6,15 @@ line "<!-- tg", then 2-4 short lines in Russian for users (what is new, what is 
 then close it like any HTML comment. The release notes carry it, and the chat bot posts those lines.
 -->
 
+## [1.3.0] - 2026-11-20
+
+### Added
+- Your own reasons (#1). Next to «I really need it», «Boredom» and the rest, «+ My own reason» takes a few words of your own. The words are offered again next time, the bottle says it was laid tagged with them, and the ledger gives them their own line and notes.
+
+<!-- tg
+В «Почему хочется сейчас?» можно вписать свою причину. Она запомнится и в следующий раз будет среди остальных, а в журнале у неё появится своя строка.
+-->
+
 ## [1.2.1] - 2026-10-25
 
 ### Added
